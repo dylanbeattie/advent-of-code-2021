@@ -15,13 +15,33 @@ var epsilon = Splat(epsilonBits);
 
 Console.WriteLine($"Solution to part 1: {gamma * epsilon}");
 
-int Filter(int[] pattern, IEnumerable<int[]> inputs) {
-    for(var i = 0; i < pattern.Length; i++) {
-        var bit = pattern[i];
-        inputs = inputs.Where(input => input[i] == pattern[i]).ToList();
-        if (inputs.Count() == 1) return(Splat(inputs.First()));
+var o2 = MaxFilter(0, inputs);
+var co2 = MinFilter(0, inputs);
+Console.WriteLine($"Solution to part 2: {o2 * co2}");
+
+int MaxFilter(int index, IEnumerable<int[]> inputs) {
+    Console.WriteLine("==================");
+    foreach(var i in inputs) {
+        Console.WriteLine(String.Join("", i.Select(s => s.ToString()).ToArray()));
     }
-    throw new Exception("BOOM!");
+    var mcb = MostCommonBit(inputs, index);
+    inputs = inputs.Where(i => i[index] == mcb).ToList();
+    return
+    inputs.Count() == 1 
+        ? Splat(inputs.First())
+        :
+        MaxFilter(index+1, inputs);
+}
+ 
+ 
+int MinFilter(int index, IEnumerable<int[]> inputs) {
+    var lcb = LeastCommonBit(inputs, index);
+    inputs = inputs.Where(i => i[index] == lcb).ToList();
+    return
+    inputs.Count() == 1 
+        ? Splat(inputs.First())
+        :
+        MinFilter(index+1, inputs);
 }
 
 int Splat(IEnumerable<int> bits) {
@@ -29,12 +49,18 @@ int Splat(IEnumerable<int> bits) {
     return Convert.ToInt32(s, 2);
 }
 
-int MostCommonBit(IEnumerable<int[]> inputs, int index) => inputs
+int MostCommonBit(IEnumerable<int[]> inputs, int index) {
+    var groups = inputs
         .Select(i => i[index])
-        .GroupBy(i => i)
-        .OrderBy(g => g.Count()).Last().Key;
+        .GroupBy(i => i).ToArray();
+        if (groups[0].Count() == groups[1].Count()) return(1);
+        return groups.OrderBy(g => g.Count()).Last().Key;
+}
 
-int LeastCommonBit(IEnumerable<int[]> inputs, int index) => inputs
+int LeastCommonBit(IEnumerable<int[]> inputs, int index) {
+        var groups = inputs
         .Select(i => i[index])
-        .GroupBy(i => i)
-        .OrderBy(g => g.Count()).First().Key;
+        .GroupBy(i => i).ToArray();
+        if (groups[0].Count() == groups[1].Count()) return(0);
+        return groups.OrderBy(g => g.Count()).First().Key;
+}
