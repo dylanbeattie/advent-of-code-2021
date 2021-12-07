@@ -1,7 +1,7 @@
 ﻿open System.IO
-type FishAge = int32
-type PopulationCount = int64
-type PopulationSegment = { Age: FishAge; Size: PopulationCount }
+type FishAge = FishAge of int32
+type PopulationSize = PopulationSize of int64
+type PopulationSegment = { Age: FishAge; Size: PopulationSize }
 
 let tokens = File.ReadAllText("input.txt").Split(',')
 let population = 
@@ -11,7 +11,7 @@ let population =
     |> Seq.map (fun group -> 
         let age = fst group
         let size = snd group |> Seq.length
-        { Age = age; Size = size })
+        { Age = FishAge age; Size = PopulationSize size })
 
 let evolve population = 
     let fishAboutToSpawn = population |> Seq.tryFind (fun p -> p.Age = 0)
@@ -22,7 +22,7 @@ let evolve population =
     |> Seq.groupBy (fun popn -> popn.Age)
     |> Seq.map (fun group -> 
         let age = fst group
-        let size = snd group |> Seq.map (fun p -> p.Size) |> Seq.sum
+        let size = snd group |> Seq.map (fun p -> p.Size) |> Seq.sum |> PopulationSize 
         { Age = age; Size = size })
 
 let rec solve days population = 

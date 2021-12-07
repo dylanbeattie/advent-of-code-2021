@@ -10,10 +10,8 @@ Dictionary<int, long> Evolve(Dictionary<int, long> fish) {
 }
 
 long Solve(Dictionary<int, long> fish, int days) {
-    for (var i = 0; i < days; i++) fish = Evolve(fish);
-    return fish.Sum(pair => pair.Value);
+    return days == 0 ? fish.Sum(pair => pair.Value) : Solve(Evolve(fish), days - 1);
 }
 
 Console.WriteLine($"Part 1: {Solve(input, 80)}");
 Console.WriteLine($"Part 2: {Solve(input, 256)}");
-
