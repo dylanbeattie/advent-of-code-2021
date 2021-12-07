@@ -1,31 +1,30 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.30114.105
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "day1", "day1\day1.csproj", "{6DB72E13-C6B2-455C-BFB7-19CB925DC87D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "day1", "day1\day1.csproj", "{6DB72E13-C6B2-455C-BFB7-19CB925DC87D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "day2", "day2\day2.csproj", "{6E27817E-BD26-4FEA-8CA2-D3FE223F915E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "day2", "day2\day2.csproj", "{6E27817E-BD26-4FEA-8CA2-D3FE223F915E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "day3", "day3\day3.csproj", "{34D7E85F-A6DC-43A9-B96D-0525BA851BB9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "day3", "day3\day3.csproj", "{34D7E85F-A6DC-43A9-B96D-0525BA851BB9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "day5", "day5\day5.csproj", "{B74CD5A3-A081-4A89-BA39-4D37C8217D15}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "day5", "day5\day5.csproj", "{B74CD5A3-A081-4A89-BA39-4D37C8217D15}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "day6", "day6\day6.csproj", "{45997EA4-A7A5-4ED3-AB7B-962925A87FCA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "day6", "day6\day6.csproj", "{45997EA4-A7A5-4ED3-AB7B-962925A87FCA}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "day4", "day4", "{A1595204-0BDB-4138-82BD-08CD6B6C4D6E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "day4", "day4\day4\day4.csproj", "{4803736F-531F-44C1-BD2A-FB2D236CFDC7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "day4", "day4\day4\day4.csproj", "{4803736F-531F-44C1-BD2A-FB2D236CFDC7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "day4test", "day4\day4test\day4test.csproj", "{A291AFE7-4391-442F-84A6-F3A6832EC117}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "day4test", "day4\day4test\day4test.csproj", "{A291AFE7-4391-442F-84A6-F3A6832EC117}"
+EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "day6-fsharp", "day6-fsharp\day6-fsharp.fsproj", "{059F69DF-72AC-4134-8412-5B115365DC58}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
-	EndGlobalSection
-	GlobalSection(SolutionProperties) = preSolution
-		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{6DB72E13-C6B2-455C-BFB7-19CB925DC87D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -56,9 +55,19 @@ Global
 		{A291AFE7-4391-442F-84A6-F3A6832EC117}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A291AFE7-4391-442F-84A6-F3A6832EC117}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A291AFE7-4391-442F-84A6-F3A6832EC117}.Release|Any CPU.Build.0 = Release|Any CPU
+		{059F69DF-72AC-4134-8412-5B115365DC58}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{059F69DF-72AC-4134-8412-5B115365DC58}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{059F69DF-72AC-4134-8412-5B115365DC58}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{059F69DF-72AC-4134-8412-5B115365DC58}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{4803736F-531F-44C1-BD2A-FB2D236CFDC7} = {A1595204-0BDB-4138-82BD-08CD6B6C4D6E}
 		{A291AFE7-4391-442F-84A6-F3A6832EC117} = {A1595204-0BDB-4138-82BD-08CD6B6C4D6E}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {5DBA434E-A7B2-41E6-A262-F9E76626765F}
 	EndGlobalSection
 EndGlobal
