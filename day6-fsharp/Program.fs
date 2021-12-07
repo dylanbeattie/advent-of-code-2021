@@ -32,7 +32,7 @@ let evolve population =
 
     population
     |> Seq.map (fun p -> {
-        Age = if p.Age > FishAge 0 then p.Age - FishAge 1 else FishAge 6
+        Age = if p.Age > FishAge.Zero then p.Age - FishAge 1 else FishAge 6
         Size = p.Size;
     })
     |> Seq.insertAt 0 newFish
