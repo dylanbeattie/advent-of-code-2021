@@ -5,8 +5,8 @@ var totalPart1 = solutions.Aggregate(String.Empty, (s1,s2) => s1 + s2)
 
 var totalPart2 = solutions.Sum(Int32.Parse);
 
-Console.WriteLine($"solution to part 1: {totalPart1}");
-Console.WriteLine($"solution to part 2: {totalPart2}");
+Console.WriteLine($"Solution to part 1: {totalPart1}");
+Console.WriteLine($"Solution to part 2: {totalPart2}");
 
 string Solve(string line) => new Observation(line).Solve();
 
