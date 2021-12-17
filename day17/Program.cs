@@ -1,6 +1,4 @@
 ﻿using System.Text.RegularExpressions;
-using System.Linq;
-// See https://aka.ms/new-console-template for more information
 var match = Regex.Match(File.ReadAllText("input.txt"), @"target area: x=([-0-9]+)\.\.([-0-9]+), y=([-\d]+)\.\.([-\d]+)");
 var extents = match.Groups.Values.Skip(1).Select(m => Int32.Parse(m.Value)).ToArray();
 
